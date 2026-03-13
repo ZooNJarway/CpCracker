@@ -82,7 +82,7 @@ python main.py --target-url http://127.0.0.1:5000/login --captcha-url http://127
 
 `--cap:`**设置验证码载荷**
 
-![1773413983120](images\1773413983120.png)
+![1773413983120](./images/1773413983120.png)
 
 ### UI版本
 
