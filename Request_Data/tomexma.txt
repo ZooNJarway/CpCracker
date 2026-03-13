@@ -1,0 +1,16 @@
+POST /tomexam/process.do?action=login HTTP/1.1
+Host: 10.0.0.101:8080
+Content-Length: 48
+Cache-Control: max-age=0
+Origin: http://10.0.0.101:8080
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://10.0.0.101:8080/tomexam/login.jsp
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: JSESSIONID=F3914439EB95B6433BB6F0E85690DDDA; AoBN_2132_ulastactivity=7e41SDVYsSApO0DJ2qWvvyIIUX8PGws1W7x4XBhlWIZ%2FeGv2UQiB; AoBN_2132_smile=1D1; sitekeyword=%3Ca+href%3D%27http%3A%2F%2Fx%2E5vshop%2Ecom%27%3E5vShop%C8%FD%BA%CF%D2%BB%B5%E7%C9%CC%CF%B5%CD%B3%C9%CF%CA%D0%21%21%3C%2Fa%3E%26nbsp%3B%26nbsp%3B%3Ca+href%3D%27show%2Easp%3Fpkid%3D4929%27%3E%C3%C9%CC%D8%CB%B9%3C%2Fa%3E%26nbsp%3B%26nbsp%3B%3Ca+href%3D%27productlist%2Easp%3Fkind%3D00030008%27%3E%D6%D0%B5%CD%B6%CB%C3%C0%BE%C6%3C%2Fa%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B; security_level=0; Ufc4_2132_ulastactivity=07ef6TSzqSRuo78EeL7B3sH3lwW%2BEfXyAM%2B%2FsxCRS19HE8YDxRys; Ufc4_2132_smile=1D1; user=admin
+Connection: keep-alive
+
+username=admin&userpass=payload&usertype=1&tvery=payload

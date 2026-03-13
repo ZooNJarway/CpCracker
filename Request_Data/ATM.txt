@@ -1,0 +1,16 @@
+POST /login HTTP/1.1
+Host: 10.0.0.103:5000
+Content-Length: 46
+Cache-Control: max-age=0
+Origin: http://10.0.0.103:5000
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://10.0.0.103:5000/login
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: session=.eJwlzjEOwjAMAMC_ZGaw2zhx-gD4ARJTZTu2yobaMiH-TiTG2-6T1tj92NJy7m-_pPXZ05IQwLlJIzM3qJkrs1aNyAhFw1SjSwGeCHqjARzMTFkDos1zMSXAmcQ7cAnOBIw4dXLzCsjFomULhbAi3KgIUjXJ7qKzoaQReR--_zfToMnrtE2G7tfHLX1_ZDY1Uw.aEolng.D6jZ2XzTeq_PdM4DRwsS-569prM
+Connection: keep-alive
+
+username=admin&password=payload&captcha=payload
