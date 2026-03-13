@@ -69,7 +69,7 @@ http://10.0.0.103:5000/captcha
 终端运行`main.py`
 
 ```cmd
-python main1.py --target-url http://127.0.0.1:5000/login --captcha-url http://127.0.0.1:5000/captcha --user Jarway --pwd password --cap captcha
+python main.py --target-url http://127.0.0.1:5000/login --captcha-url http://127.0.0.1:5000/captcha --user Jarway --pwd password --cap captcha
 ```
 
 `--target-url:`**目标站点登录页面**

